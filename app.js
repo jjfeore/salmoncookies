@@ -11,7 +11,7 @@ var pikeShop = {
     var cookieTotal = 0;
     var randSale;
     for (var i = 0; i < 15; i++) {
-      randSale = this.randCust() * this.avgCookies;
+      randSale = Math.ceil(this.randCust() * this.avgCookies);
       cookieTotal += randSale;
       this.cookieCount.push(randSale);
     }
@@ -33,7 +33,7 @@ var airportShop = {
     var cookieTotal = 0;
     var randSale;
     for (var i = 0; i < 15; i++) {
-      randSale = this.randCust() * this.avgCookies;
+      randSale = Math.ceil(this.randCust() * this.avgCookies);
       cookieTotal += randSale;
       this.cookieCount.push(randSale);
     }
@@ -55,7 +55,7 @@ var centerShop = {
     var cookieTotal = 0;
     var randSale;
     for (var i = 0; i < 15; i++) {
-      randSale = this.randCust() * this.avgCookies;
+      randSale = Math.ceil(this.randCust() * this.avgCookies);
       cookieTotal += randSale;
       this.cookieCount.push(randSale);
     }
@@ -77,7 +77,7 @@ var hillShop = {
     var cookieTotal = 0;
     var randSale;
     for (var i = 0; i < 15; i++) {
-      randSale = this.randCust() * this.avgCookies;
+      randSale = Math.ceil(this.randCust() * this.avgCookies);
       cookieTotal += randSale;
       this.cookieCount.push(randSale);
     }
@@ -99,7 +99,7 @@ var alkiShop = {
     var cookieTotal = 0;
     var randSale;
     for (var i = 0; i < 15; i++) {
-      randSale = this.randCust() * this.avgCookies;
+      randSale = Math.ceil(this.randCust() * this.avgCookies);
       cookieTotal += randSale;
       this.cookieCount.push(randSale);
     }
@@ -115,7 +115,6 @@ function listData(listObj) {
     var newEl = document.createElement('li');
     newEl.innerText = storeHours[a] + listObj.cookieCount[a];
     listObj.pageElement.appendChild(newEl);
-//    listObj.pageElement.childNodes[a].insertAdjacentHTML('beforeend', listObj.cookieCount[a]);
   }
 }
 listData(pikeShop);
