@@ -3,18 +3,18 @@ var shopObj = {
   maxCust: 0,
   avgCookies: 0,
   randCust: function () {
-    return Math.floor(Math.random() * maxCust) + minCust;
+    return Math.floor(Math.random() * this.maxCust) + this.minCust;
   },
   cookieCount: [],
   dailySales: function () {
     var cookieTotal = 0;
     var randSale;
     for (var i = 0; i < 15; i++) {
-      randSale = randCust() * avgCookies;
+      randSale = this.randCust() * this.avgCookies;
       cookieTotal += randSale;
-      cookieCount.push(randSale);
+      this.cookieCount.push(randSale);
     }
-    cookieCount.push(cookieTotal);
+    this.cookieCount.push(cookieTotal);
   }
 };
 

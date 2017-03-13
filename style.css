@@ -1,0 +1,23 @@
+body {
+  width: 90%;
+  background-color: #FFCC99;
+  font-family: Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Diplomata SC', cursive;
+}
+
+.data {
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  background-color: #E8CE93;
+  border: solid 1px black;
+  display: inline-block;
+}
+
+#spacer {
+  width: 10;
+}
