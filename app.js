@@ -1,10 +1,10 @@
-var shopObj = {
-  minCust: 0,
-  maxCust: 0,
-  avgCookies: 0,
-  pageElement: 0,
+var pikeShop = {
+  minCust: 23,
+  maxCust: 65,
+  avgCookies: 6.3,
+  pageElement: document.getElementById('pikeList'),
   randCust: function () {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
   cookieCount: [],
   dailySales: function () {
@@ -18,45 +18,104 @@ var shopObj = {
     this.cookieCount.push(cookieTotal);
   }
 };
-
-var pikeShop = new shopObj();
-pikeShop.minCust = 23;
-pikeShop.maxCust = 65;
-pikeShop.avgCookies = 6.3;
-pikeShop.pageElement = document.getElementById('pikeList');
 pikeShop.dailySales();
 
-var airportShop = new shopObj();
-airportShop.minCust = 3;
-airportShop.maxCust = 24;
-airportShop.avgCookies = 12;
-airportShop.pageElement = document.getElementById('airportList');
+var airportShop = {
+  minCust: 3,
+  maxCust: 24,
+  avgCookies: 1.2,
+  pageElement: document.getElementById('airportList'),
+  randCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  },
+  cookieCount: [],
+  dailySales: function () {
+    var cookieTotal = 0;
+    var randSale;
+    for (var i = 0; i < 15; i++) {
+      randSale = this.randCust() * this.avgCookies;
+      cookieTotal += randSale;
+      this.cookieCount.push(randSale);
+    }
+    this.cookieCount.push(cookieTotal);
+  }
+};
 airportShop.dailySales();
 
-var centerShop = new shopObj();
-centerShop.minCust = 11;
-centerShop.maxCust = 38;
-centerShop.avgCookies = 3.7;
-centerShop.pageElement = document.getElementById('centerList');
+var centerShop = {
+  minCust: 11,
+  maxCust: 38,
+  avgCookies: 3.7,
+  pageElement: document.getElementById('centerList'),
+  randCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  },
+  cookieCount: [],
+  dailySales: function () {
+    var cookieTotal = 0;
+    var randSale;
+    for (var i = 0; i < 15; i++) {
+      randSale = this.randCust() * this.avgCookies;
+      cookieTotal += randSale;
+      this.cookieCount.push(randSale);
+    }
+    this.cookieCount.push(cookieTotal);
+  }
+};
 centerShop.dailySales();
 
-var hillShop = new shopObj();
-hillShop.minCust = 20;
-hillShop.maxCust = 38;
-hillShop.avgCookies = 2.3;
-hillShop.pageElement = document.getElementById('hillList');
+var hillShop = {
+  minCust: 20,
+  maxCust: 38,
+  avgCookies: 2.3,
+  pageElement: document.getElementById('hillList'),
+  randCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  },
+  cookieCount: [],
+  dailySales: function () {
+    var cookieTotal = 0;
+    var randSale;
+    for (var i = 0; i < 15; i++) {
+      randSale = this.randCust() * this.avgCookies;
+      cookieTotal += randSale;
+      this.cookieCount.push(randSale);
+    }
+    this.cookieCount.push(cookieTotal);
+  }
+};
 hillShop.dailySales();
 
-var alkiShop = new shopObj();
-alkiShop.minCust = 2;
-alkiShop.maxCust = 16;
-alkiShop.avgCookies = 4.6;
-alkiShop.pageElement = document.getElementById('alkiList');
+var alkiShop = {
+  minCust: 2,
+  maxCust: 16,
+  avgCookies: 4.6,
+  pageElement: document.getElementById('alkiList'),
+  randCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  },
+  cookieCount: [],
+  dailySales: function () {
+    var cookieTotal = 0;
+    var randSale;
+    for (var i = 0; i < 15; i++) {
+      randSale = this.randCust() * this.avgCookies;
+      cookieTotal += randSale;
+      this.cookieCount.push(randSale);
+    }
+    this.cookieCount.push(cookieTotal);
+  }
+};
 alkiShop.dailySales();
+
+var storeHours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: ','8pm: ','Total: '];
 
 function listData(listObj) {
   for (var a = 0; a < listObj.cookieCount.length; a++) {
-    listObj.pageElement.childNodes[a].firstChild.innerHTML = listObj.cookieCount[a];
+    var newEl = document.createElement('li');
+    newEl.innerText = storeHours[a] + listObj.cookieCount[a];
+    listObj.pageElement.appendChild(newEl);
+//    listObj.pageElement.childNodes[a].insertAdjacentHTML('beforeend', listObj.cookieCount[a]);
   }
 }
 listData(pikeShop);
