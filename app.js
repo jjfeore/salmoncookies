@@ -59,6 +59,23 @@ function tableHead() {
   return newTHead;
 }
 
+function tableFoot() {
+  var newTR = document.createElement('tr');
+  var newTD = document.createElement('td');
+  newTD.innerText = 'Totals';
+  newTR.appendChild(newTD);
+  for (var c = 0; c < storeHours.length; c++) {
+    var hourlyTotal = 0;
+    for (var i = 0; i < storeList.length; i++) {
+      hourlyTotal += storeList[i].cookieCount[c];
+    }
+    newTD = document.createElement('td');
+    newTD.innerText = hourlyTotal;
+    newTR.appendChild(newTD);
+  }
+  return newTR;
+}
+
 function genTable() {
   var pageBody = document.getElementsByTagName('body')[0];
   var newTable = document.createElement('table');
@@ -67,21 +84,9 @@ function genTable() {
   for (var b = 0; b < storeList.length; b++) {
     newTBody.appendChild(storeList[b].render());
   }
+  newTBody.appendChild(tableFoot());
   newTable.appendChild(newTBody);
   pageBody.appendChild(newTable);
-}
-
-function tableFoot() {
-  var newTR = document.createElement('tr');
-  var newTH = document.createElement('th');
-  newTH.innerText = 'Totals';
-  newTR.appendChild(newTH);
-  for (var c = 0; c < storeHours.length; c++) {
-    newTH = document.createElement('th');
-    newTH.innerText = storeHours[a];
-    newTR.appendChild(newTR);
-  }
-  return newTHead;
 }
 
 genTable();
