@@ -98,8 +98,9 @@ header {
   outline: 5px dotted #000;
 } */
 
-li {
+table, thead, tbody, th, tr, td {
+  border: 2px solid #9E8D64;
   margin: 0px;
-  padding: 0px;
   font-family: Arial, sans-serif;
+  text-align: center;
 }

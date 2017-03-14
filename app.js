@@ -63,15 +63,14 @@ function genTable() {
   var pageBody = document.getElementsByTagName('body')[0];
   var newTable = document.createElement('table');
   newTable.appendChild(tableHead());
+  var newTBody = document.createElement('tbody');
   for (var b = 0; b < storeList.length; b++) {
-    newTable.appendChild(storeList[b].render());
+    newTBody.appendChild(storeList[b].render());
   }
+  newTable.appendChild(newTBody);
   pageBody.appendChild(newTable);
 }
 
-genTable();
-
-/*
 function tableFoot() {
   var newTR = document.createElement('tr');
   var newTH = document.createElement('th');
@@ -84,4 +83,5 @@ function tableFoot() {
   }
   return newTHead;
 }
-*/
+
+genTable();
