@@ -1,3 +1,5 @@
+'use strict';
+
 var pikeShop = {
   minCust: 23,
   maxCust: 65,
