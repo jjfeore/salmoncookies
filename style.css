@@ -1,0 +1,105 @@
+body {
+  background-color: #FFCC99;
+  font-family: Georgia, serif;
+  margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Diplomata SC', cursive;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background-color: #E8CE93;
+  z-index: 999;
+  border-bottom: 3px solid #9E8D64;
+}
+
+#spacer {
+  height: 60px;
+  width: 100%;
+}
+
+#logo {
+  width: 50%;
+  background-image: url("salmon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: auto;
+  margin: auto;
+  position: relative;
+}
+
+#invis {
+    vertical-align: top;
+    width: 100%;
+    opacity: 0;
+}
+
+#floatText {
+  position: absolute;
+  top: 110px;
+  left: 80px;
+  font-weight: bold;
+  color: #FFF;
+  margin: auto;
+  padding: 0px;
+}
+
+#logo h1 {
+  font-size: 2.4vw;
+  text-shadow: 2px 2px 4px #000000;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+#logo p {
+  font-size: 1.5vw;
+  text-shadow: 2px 2px 4px #000000;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.content {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  overflow: auto;
+  outline: 5px dotted #000;
+}
+
+.info {
+  background-color: #E8CE93;
+  border: 3px solid #9E8D64;
+  border-radius: 10px;
+  display: inline-block;
+  margin-left: 4%;
+  min-width: 300px;
+  width: 48%;
+  min-height: 200px;
+  float: left;
+}
+
+.content:first-child {
+  margin-left: 0px;
+}
+/*
+#vert-spacer {
+  background-color: #000;
+  width: 4%;
+  display: inline-block;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 5px dotted #000;
+} */
+
+li {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, sans-serif;
+}
