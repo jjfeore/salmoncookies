@@ -27,11 +27,15 @@ header {
   background-image: url("salmon.png");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 0;
-  padding-top: 31.26%;
+  overflow: auto;
   margin: auto;
   position: relative;
-  outline: 5px dotted #000;
+}
+
+#invis {
+    vertical-align: top;
+    width: 100%;
+    opacity: 0;
 }
 
 #floatText {
@@ -60,15 +64,10 @@ header {
   text-align: center;
 }
 
-li {
-  margin: 0px;
-  padding: 0px;
-  font-family: Arial, sans-serif;
-}
-
 #content {
   width: 90%;
   margin: auto;
+  margin-top: 20px;
   outline: 5px dotted #000;
   overflow: auto;
 }
@@ -81,9 +80,20 @@ li {
   min-width: 300px;
   height: 400px;
   float: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #vert-spacer {
   width: 10;
   display: inline-block;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, sans-serif;
 }
