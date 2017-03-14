@@ -1,6 +1,20 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: #FFCC99;
   font-family: Georgia, serif;
+  padding: 0px;
+  position: relative;
+  min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,7 +38,7 @@ nav {
   padding: 0px;
   border: 0px;
   text-align: center;
-  box-sizing: border-box;
+  vertical-align: middle;
 }
 
 #spacer {
@@ -127,4 +141,17 @@ iframe {
   height: 400px;
   margin: 2%;
   box-sizing: border-box;
+}
+
+footer {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+  margin: 20px 0px 0px 0px;
+  background-color: #E8CE93;
+  border-top: 3px solid #9E8D64;
+  text-align: center;
+  vertical-align: 50%;
 }
