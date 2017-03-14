@@ -13,14 +13,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
   width: 50%;
   background-image: url("salmon.png");
+  background-size: contain;
   background-repeat: no-repeat;
+  height: 0;
+  padding-top: 31.26%;
   margin: auto;
   position: relative;
 }
 
 #floatText {
   position: absolute;
-  top: 123px;
+  top: 100px;
+  left: 30px;
   font-weight: bold;
   color: #FFF;
   margin: auto;
