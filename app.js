@@ -3,7 +3,7 @@
 var storeHours = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am','11:00 am','12:00 pm','1:00 pm','2:00 pm','3:00 pm','4:00 pm','5:00 pm','6:00 pm','7:00 pm','8:00 pm','Daily Location Total'];
 var storeList = [];
 
-function cookieShop(min, max, avgC, sName) {
+function CookieShop(min, max, avgC, sName) {
   this.minCust = min;
   this.maxCust = max;
   this.avgCookies = avgC;
@@ -38,11 +38,11 @@ function cookieShop(min, max, avgC, sName) {
   storeList.push(this);
 }
 
-var pikeShop = new cookieShop(23, 65, 6.3, 'First and Pike');
-var airportShop = new cookieShop(3, 24, 1.2, 'Airport');
-var centerShop = new cookieShop(11, 38, 3.7, 'Seattle Center');
-var hillShop = new cookieShop(20, 38, 2.3, 'Capitol Hill');
-var alkiShop = new cookieShop(2, 16, 4.6, 'Alki');
+var pikeShop = new CookieShop(23, 65, 6.3, 'First and Pike');
+var airportShop = new CookieShop(3, 24, 1.2, 'Airport');
+var centerShop = new CookieShop(11, 38, 3.7, 'Seattle Center');
+var hillShop = new CookieShop(20, 38, 2.3, 'Capitol Hill');
+var alkiShop = new CookieShop(2, 16, 4.6, 'Alki');
 
 function tableHead() {
   var newTHead = document.createElement('thead');
@@ -90,3 +90,15 @@ function genTable() {
 }
 
 genTable();
+
+storeForm = document.getElementById('newStoreForm');
+
+function addToTable(event){
+  event.preventDefault(); // stops the form from submitting and leaving the page.
+  // time for the harvest
+  var theFormItself = event.target;
+  // the "elements" attribute of the event.target object holds (for a form) all of the form fields by name
+  console.log(theFormItself.elements['firstname'].value);
+};
+
+storeForm.addEventListener('submit', AddToTable);
