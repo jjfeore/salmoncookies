@@ -1,7 +1,20 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: #FFCC99;
   font-family: Georgia, serif;
-  margin: auto;
+  padding: 0px;
+  position: relative;
+  min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,14 +24,25 @@ h1, h2, h3, h4, h5, h6 {
 header {
   height: 50px;
   width: 100%;
+  top: 0px;
+  left: 0px;
   position: fixed;
   background-color: #E8CE93;
   z-index: 999;
   border-bottom: 3px solid #9E8D64;
 }
 
+nav {
+  width: 60%;
+  margin: 0px auto 0px auto;
+  padding: 0px;
+  border: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
 #spacer {
-  height: 60px;
+  height: 70px;
   width: 100%;
 }
 
@@ -68,8 +92,9 @@ header {
   width: 90%;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   overflow: auto;
-  outline: 5px dotted #000;
+/*  outline: 5px dotted #000; */
 }
 
 .info {
@@ -77,29 +102,56 @@ header {
   border: 3px solid #9E8D64;
   border-radius: 10px;
   display: inline-block;
-  margin-left: 4%;
   min-width: 300px;
-  width: 48%;
-  min-height: 200px;
+  width: 49%;
+  min-height: 480px;
   float: left;
+  box-sizing: border-box;
 }
 
-.content:first-child {
-  margin-left: 0px;
-}
-/*
-#vert-spacer {
-  background-color: #000;
-  width: 4%;
-  display: inline-block;
-  float: left;
-  margin-left: auto;
-  margin-right: auto;
-  outline: 5px dotted #000;
-} */
-
-li {
-  margin: 0px;
+.info h4 {
+  text-align: center;
+  font-size: 1.5vw;
+  text-shadow: 2px 2px 4px #000000;
+  font-weight: bold;
+  color: #FFF;
   padding: 0px;
+  margin: 7px 0px 0px 0px;
+}
+
+.info p {
+  margin: 2%;
+  box-sizing: border-box;
+}
+
+.left {
+  margin-right: 2%;
+  display: inline-block;
+}
+
+table, thead, tbody, th, tr, td {
+  border: 2px solid #9E8D64;
+  margin: 0px;
   font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+iframe {
+  width: 96%;
+  height: 400px;
+  margin: 2%;
+  box-sizing: border-box;
+}
+
+footer {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+  margin: 20px 0px 0px 0px;
+  background-color: #E8CE93;
+  border-top: 3px solid #9E8D64;
+  text-align: center;
+  vertical-align: 50%;
 }
