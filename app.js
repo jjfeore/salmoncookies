@@ -111,7 +111,9 @@ function addToTable(event){
   else {
     var newShop = new CookieShop(min, max, average, storeLoc);
     var tBody = document.getElementsByTagName('tbody')[0];
+    tBody.removeChild(tBody.lastChild);
     tBody.appendChild(newShop.render());
+    tBody.appendChild(tableFoot());
   }
 };
 
