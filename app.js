@@ -91,14 +91,21 @@ function genTable() {
 
 genTable();
 
-storeForm = document.getElementById('newStoreForm');
+var storeForm = document.getElementById('newStoreForm');
 
 function addToTable(event){
-  event.preventDefault(); // stops the form from submitting and leaving the page.
-  // time for the harvest
-  var theFormItself = event.target;
-  // the "elements" attribute of the event.target object holds (for a form) all of the form fields by name
-  console.log(theFormItself.elements['firstname'].value);
+  var newStoreForm = event.target;
+  var storeLoc = newStoreForm.elements['storeLoc'].value;
+  var min = newStoreForm.elements['min'].value;
+  var max = newStoreForm.elements['max'].value;
+  var average = newStoreForm.elements['average'].value;
+  if (isNaN(min) || isNaN(max) || isNaN(average)) {
+    var warning = document.createElement('p');
+    warning.innerText = 'Please enter only a number for the minimum, maximum, and average';
+    storeForm.appendChild(warning);
+    console.log('triggered 2');
+  }
+  console.log('triggered 1');
 };
 
-storeForm.addEventListener('submit', AddToTable);
+storeForm.addEventListener('submit', addToTable);
