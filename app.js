@@ -100,7 +100,7 @@ function addToTable(event){
   var min = Math.floor(newStoreForm.elements['min'].value);
   var max = Math.floor(newStoreForm.elements['max'].value);
   var average = newStoreForm.elements['average'].value;
-  var warning = document.createElement('p');
+  var warning = document.getElementById('errorText');
   storeForm.appendChild(warning);
   if (isNaN(min) || isNaN(max) || isNaN(average)) {
     warning.innerText = 'Please enter only a number for the minimum, maximum, and average';
@@ -109,6 +109,7 @@ function addToTable(event){
     warning.innerText = 'Please enter a larger maximum than minimum customers';
   }
   else {
+    warning.innerText = '';
     var newShop = new CookieShop(min, max, average, storeLoc);
     var tBody = document.getElementsByTagName('tbody')[0];
     tBody.removeChild(tBody.lastChild);
