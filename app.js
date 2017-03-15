@@ -94,18 +94,25 @@ genTable();
 var storeForm = document.getElementById('newStoreForm');
 
 function addToTable(event){
+  event.preventDefault();
   var newStoreForm = event.target;
   var storeLoc = newStoreForm.elements['storeLoc'].value;
-  var min = newStoreForm.elements['min'].value;
-  var max = newStoreForm.elements['max'].value;
+  var min = Math.floor(newStoreForm.elements['min'].value);
+  var max = Math.floor(newStoreForm.elements['max'].value);
   var average = newStoreForm.elements['average'].value;
+  var warning = document.createElement('p');
+  storeForm.appendChild(warning);
   if (isNaN(min) || isNaN(max) || isNaN(average)) {
-    var warning = document.createElement('p');
     warning.innerText = 'Please enter only a number for the minimum, maximum, and average';
-    storeForm.appendChild(warning);
-    console.log('triggered 2');
   }
-  console.log('triggered 1');
+  else if (min > max) {
+    warning.innerText = 'Please enter a larger maximum than minimum customers';
+  }
+  else {
+    var newShop = new CookieShop(min, max, average, storeLoc);
+    var tBody = document.getElementsByTagName('tbody')[0];
+    tBody.appendChild(newShop.render());
+  }
 };
 
 storeForm.addEventListener('submit', addToTable);
