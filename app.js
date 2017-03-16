@@ -3,7 +3,7 @@
 var storeHours = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am','11:00 am','12:00 pm','1:00 pm','2:00 pm','3:00 pm','4:00 pm','5:00 pm','6:00 pm','7:00 pm','8:00 pm','Daily Location Total'];
 var storeList = [];
 
-function cookieShop(min, max, avgC, sName) {
+function CookieShop(min, max, avgC, sName) {
   this.minCust = min;
   this.maxCust = max;
   this.avgCookies = avgC;
@@ -38,11 +38,11 @@ function cookieShop(min, max, avgC, sName) {
   storeList.push(this);
 }
 
-var pikeShop = new cookieShop(23, 65, 6.3, 'First and Pike');
-var airportShop = new cookieShop(3, 24, 1.2, 'Airport');
-var centerShop = new cookieShop(11, 38, 3.7, 'Seattle Center');
-var hillShop = new cookieShop(20, 38, 2.3, 'Capitol Hill');
-var alkiShop = new cookieShop(2, 16, 4.6, 'Alki');
+var pikeShop = new CookieShop(23, 65, 6.3, 'First and Pike');
+var airportShop = new CookieShop(3, 24, 1.2, 'Airport');
+var centerShop = new CookieShop(11, 38, 3.7, 'Seattle Center');
+var hillShop = new CookieShop(20, 38, 2.3, 'Capitol Hill');
+var alkiShop = new CookieShop(2, 16, 4.6, 'Alki');
 
 function tableHead() {
   var newTHead = document.createElement('thead');
@@ -90,3 +90,33 @@ function genTable() {
 }
 
 genTable();
+
+var storeForm = document.getElementById('newStoreForm');
+
+function addToTable(event){
+  event.preventDefault();
+  var newStoreForm = event.target;
+  var storeLoc = newStoreForm.elements['storeLoc'].value;
+  var min = Math.floor(newStoreForm.elements['min'].value);
+  var max = Math.floor(newStoreForm.elements['max'].value);
+  var average = newStoreForm.elements['average'].value;
+  var warning = document.getElementById('errorText');
+  storeForm.appendChild(warning);
+  if (isNaN(min) || isNaN(max) || isNaN(average)) {
+    warning.innerText = 'Please enter only a number for the minimum, maximum, and average';
+  }
+  else if (min > max) {
+    warning.innerText = 'Please enter a larger maximum than minimum customers';
+  }
+  else {
+    warning.innerText = '';
+    var newShop = new CookieShop(min, max, average, storeLoc);
+    var tBody = document.getElementsByTagName('tbody')[0];
+    tBody.removeChild(tBody.lastChild);
+    tBody.appendChild(newShop.render());
+    tBody.appendChild(tableFoot());
+    newStoreForm.reset();
+  }
+};
+
+storeForm.addEventListener('submit', addToTable);
