@@ -44,12 +44,12 @@ nav {
   background-image: url("salmon.png");
   background-size: contain;
   background-repeat: no-repeat;
-  overflow: auto;
+  overflow: hidden;
   margin: auto;
   position: relative;
 }
 
-#invis {
+.invis {
     vertical-align: top;
     width: 100%;
     opacity: 0;
@@ -115,17 +115,43 @@ nav {
   margin: 2%;
 }
 
-.info img {
-  display: block;
+/*.info img {
+  position: relative;
   width: 60%;
   border: 2px solid #9E8D64;
   border-radius: 10px;
   margin: 0px 20%;
+}*/
+
+#about-img {
+  position: relative;
+  width: 60%;
+  border-radius: 10px;
+  margin: 0px 20%;
+  background-image: url("frosted-cookie.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: auto;
+  margin: auto;
+}
+
+#about-cap {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #FFF;
+  font-size: 1.2vw;
+  text-shadow: 2px 2px 4px #000000;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Diplomata SC', cursive;
 }
 
 figure {
   padding: 0px;
-  margin: 0px;
+  margin: 10px 0px 10px 0px;
 }
 
 figcaption {
