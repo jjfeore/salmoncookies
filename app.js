@@ -35,15 +35,15 @@ function CookieShop(min, max, avgC, sName) {
     }
     return newTR;
   };
-  this.updateStore = function(newMin, newMax, newAvg, i) {
-    this.minCust = newMin;
-    this.maxCust = newMax;
-    this.avgC = newAvg;
-    this.cookieCount = [];
-    var tBody = document.getElementsByTagName('tbody')[0];
-    tBody.removeChild(tBody.childNodes[i]);
-    tBody.insertBefore(this.render(), tBody.childNodes[i]);
-  };
+  // this.updateStore = function(newMin, newMax, newAvg, i) {
+  //   this.minCust = newMin;
+  //   this.maxCust = newMax;
+  //   this.avgC = newAvg;
+  //   this.cookieCount = [];
+  //   var tBody = document.getElementsByTagName('tbody')[0];
+  //   tBody.removeChild(tBody.childNodes[i]);
+  //   tBody.childNodes[i].insertAdjacentElement('beforebegin', this.render());
+  // };
   storeList.push(this);
 }
 
@@ -100,14 +100,14 @@ function genTable() {
 
 genTable();
 
-function findStore(name) {
-  for (var i = 0; i < storeList.length; i++) {
-    if (name === storeList[i].storeName) {
-      return i;
-    }
-  }
-  return false;
-}
+// function findStore(name) {
+//   for (var i = 0; i < storeList.length; i++) {
+//     if (name === storeList[i].storeName) {
+//       return i;
+//     }
+//   }
+//   return false;
+// }
 
 var storeForm = document.getElementById('newStoreForm');
 
@@ -119,7 +119,8 @@ function addToTable(event){
   var max = Math.floor(newStoreForm.elements['max'].value);
   var average = newStoreForm.elements['average'].value;
   var warning = document.getElementById('errorText');
-  var checkForStore = findStore(storeLoc);
+  var tBody = document.getElementsByTagName('tbody')[0];
+  // var checkForStore = findStore(storeLoc);
   storeForm.appendChild(warning);
   if (isNaN(min) || isNaN(max) || isNaN(average)) {
     warning.innerText = 'Please enter only a number for the minimum, maximum, and average';
@@ -127,13 +128,19 @@ function addToTable(event){
   else if (min > max) {
     warning.innerText = 'Please enter a larger maximum than minimum customers';
   }
-  else if (checkForStore) {
-    storeList[checkForStore].updateStore(min, max, average, checkForStore);
-  }
+  // else if (checkForStore) {
+  //   storeList[checkForStore] = new CookieShop(min, max, average, storeList[checkForStore].storeName);
+  //   // console.log(storeList[checkForStore].storeName + storeList[checkForStore].minCust);
+  //   tBody.removeChild(tBody.childNodes[checkForStore]);
+  //   tBody.childNodes[checkForStore].insertAdjacentElement('beforebegin', storeList[checkForStore].render());
+  //   tBody.removeChild(tBody.lastChild);
+  //   tBody.appendChild(newShop.render());
+  //   tBody.appendChild(tableFoot());
+  //   newStoreForm.reset();
+  // }
   else {
     warning.innerText = '';
     var newShop = new CookieShop(min, max, average, storeLoc);
-    var tBody = document.getElementsByTagName('tbody')[0];
     tBody.removeChild(tBody.lastChild);
     tBody.appendChild(newShop.render());
     tBody.appendChild(tableFoot());
