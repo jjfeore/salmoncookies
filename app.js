@@ -115,6 +115,7 @@ function addToTable(event){
     tBody.removeChild(tBody.lastChild);
     tBody.appendChild(newShop.render());
     tBody.appendChild(tableFoot());
+    newStoreForm.reset();
   }
 };
 

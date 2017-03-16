@@ -11,9 +11,9 @@
       <fieldset>
           <legend>Add New Store</legend>
           <label for="Store Location">Store Location: </label><input type="text" name="storeLoc" placeholder="e.g. 4th and Jackson" required/><br />
-          <label for="Minimum Customers/Hour">Minimum Customers/Hour: </label><input type="text" name="min" placeholder="Please enter a number" required/><br />
-          <label for="Max Customers/Hour">Max Customers/Hour: </label><input type="text" name="max" placeholder="Please enter a number" required/><br />
-          <label for="Average Cookies/Customer">Average Cookies/Customer: </label><input type="text" name="average" placeholder="Please enter a number" required/><br />
+          <label for="Minimum Customers/Hour">Minimum Customers/Hour: </label><input type="number" min="0" name="min" placeholder="Please enter a number" required/><br />
+          <label for="Max Customers/Hour">Max Customers/Hour: </label><input type="number" name="max" min="1" placeholder="Please enter a number" required/><br />
+          <label for="Average Cookies/Customer">Average Cookies/Customer: </label><input type="text" min="1" name="average" placeholder="Please enter a number" required/><br />
           <input type="submit" value="Add Store" />
       </fieldset>
     </form>
