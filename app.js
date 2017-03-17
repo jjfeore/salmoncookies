@@ -35,14 +35,11 @@ function CookieShop(min, max, avgC, sName) {
     }
     return newTR;
   };
-  // this.updateStore = function(newMin, newMax, newAvg, i) {
+  // this.updateStore = function(newMin, newMax, newAvg) {
   //   this.minCust = newMin;
   //   this.maxCust = newMax;
   //   this.avgC = newAvg;
   //   this.cookieCount = [];
-  //   var tBody = document.getElementsByTagName('tbody')[0];
-  //   tBody.removeChild(tBody.childNodes[i]);
-  //   tBody.childNodes[i].insertAdjacentElement('beforebegin', this.render());
   // };
   storeList.push(this);
 }
@@ -120,7 +117,7 @@ function addToTable(event){
   var average = newStoreForm.elements['average'].value;
   var warning = document.getElementById('errorText');
   var tBody = document.getElementsByTagName('tbody')[0];
-  // var checkForStore = findStore(storeLoc);
+  var checkForStore = findStore(storeLoc);
   storeForm.appendChild(warning);
   if (isNaN(min) || isNaN(max) || isNaN(average)) {
     warning.innerText = 'Please enter only a number for the minimum, maximum, and average';
@@ -129,14 +126,18 @@ function addToTable(event){
     warning.innerText = 'Please enter a larger maximum than minimum customers';
   }
   // else if (checkForStore) {
-  //   storeList[checkForStore] = new CookieShop(min, max, average, storeList[checkForStore].storeName);
   //   // console.log(storeList[checkForStore].storeName + storeList[checkForStore].minCust);
+  //   var tBody = document.getElementsByTagName('tbody')[0];
   //   tBody.removeChild(tBody.childNodes[checkForStore]);
-  //   tBody.childNodes[checkForStore].insertAdjacentElement('beforebegin', storeList[checkForStore].render());
+  //   console.log(storeList[checkForStore].minCust + ' ' + storeList[checkForStore].maxCust + ' ' + storeList[checkForStore].cookieCount);
+  //   storeList[checkForStore].updateStore(min, max, average);
+  //   console.log(storeList[checkForStore].minCust + ' ' + storeList[checkForStore].maxCust + ' ' + storeList[checkForStore].cookieCount);
+  //   tBody.childNodes[checkForStore].insertBefore(storeList[checkForStore].render(), tBody.childNodes[checkForStore - 1]);
+  //   // console.log(min + ' ' + max + ' ' + checkForStore);
+  //   console.log(storeList[checkForStore].minCust + ' ' + storeList[checkForStore].maxCust + ' ' + storeList[checkForStore].cookieCount);
   //   tBody.removeChild(tBody.lastChild);
-  //   tBody.appendChild(newShop.render());
   //   tBody.appendChild(tableFoot());
-  //   newStoreForm.reset();
+  //   // newStoreForm.reset();
   // }
   else {
     warning.innerText = '';
