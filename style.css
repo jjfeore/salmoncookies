@@ -44,7 +44,7 @@ nav {
   background-image: url("salmon.png");
   background-size: contain;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow: auto;
   margin: auto;
   position: relative;
 }
@@ -86,7 +86,7 @@ nav {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  overflow: auto;
+  overflow: hidden;
 /*  outline: 5px dotted #000; */
 }
 
@@ -99,6 +99,8 @@ nav {
   width: 49%;
   min-height: 480px;
   float: left;
+  position: relative;
+  overflow: hidden;
 }
 
 .info h4 {
@@ -131,7 +133,7 @@ nav {
   background-image: url("frosted-cookie.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  overflow: auto;
+  overflow: hidden;
   margin: auto;
 }
 
@@ -147,6 +149,42 @@ nav {
   margin: 0px;
   padding: 0px;
   font-family: 'Diplomata SC', cursive;
+}
+
+#family-pic {
+  position: absolute;
+  width: 100%;
+  margin: 0px;
+  overflow: hidden;
+  border-bottom: 3px solid #9E8D64;
+  top: -50px;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+#family-pic img {
+  width: 100%;
+}
+
+#over-family {
+  width: 100%;
+  position: absolute;
+  top: 120px;
+  text-align: center;
+}
+
+#over-family p {
+  font-size: 1.5vw;
+  color: #FFF;
+  text-shadow: 2px 2px 4px #000000;
+  margin: 0px;
+  padding: 0px;
+}
+
+#under-family {
+  width: 100%;
+  position: relative;
+  top: 200px;
 }
 
 figure {
