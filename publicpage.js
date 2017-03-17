@@ -20,3 +20,19 @@ function slideShow() {
   slideShowIndex++;
   setTimeout(slideShow, 5000);
 }
+
+var merchShowIndex = 0;
+merchShow();
+
+function merchShow() {
+  var imageList = document.getElementsByClassName('merch-slide');
+  for (var i = 0; i < imageList.length; i++) {
+    imageList[i].style.display = 'none';
+  }
+  if (merchShowIndex === imageList.length) {
+    merchShowIndex = 0;
+  }
+  imageList[merchShowIndex].style.display = 'block';
+  merchShowIndex++;
+  setTimeout(merchShow, 5000);
+}
