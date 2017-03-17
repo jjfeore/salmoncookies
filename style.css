@@ -228,6 +228,7 @@ nav {
   text-align: center;
   position: relative;
   padding: 0px;
+  height: 410px;
 }
 
 #merch-img img {
@@ -251,6 +252,32 @@ nav {
   height: 60px;
   background-color: rgba(0,0,0,0.5);
   vertical-align: middle;
+}
+
+.merch-button {
+  width: 40px;
+  position: absolute;
+  top: 200px;
+  font-size: 1.5vw;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  color: #FFF;
+  padding: 0px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.5);
+  vertical-align: middle;
+}
+
+.merch-button:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+#button-left {
+  left: 0px;
+}
+
+#button-right {
+  right: 0px;
 }
 
 .left {
