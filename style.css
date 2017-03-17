@@ -123,26 +123,35 @@ nav {
   border: 3px solid #9E8D64;
   border-radius: 10px;
   margin: 0px 20%;
-  background-image: url("frosted-cookie.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
   overflow: hidden;
+  padding: 0px;
+  height: 100%;
+  max-height: 250px;
 }
 
 #about-img img {
   width: 100%;
+  padding: 0px;
   margin: auto;
+  height: 100%;
+  max-height: 250px;
+  object-fit: cover;
 }
 
-#about-cap {
+.slideshow {
+  display: none;
+}
+
+.about-cap {
   width: 100%;
   position: absolute;
   bottom: 30px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 800;
   color: #FFF;
   font-size: 1.2vw;
-  text-shadow: 2px 2px 4px #000000;
+  color: #000;
+  text-shadow: 2px 2px 4px #FFF;
   margin: 0px;
   padding: 0px;
   font-family: 'Diplomata SC', cursive;
