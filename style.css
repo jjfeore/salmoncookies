@@ -28,9 +28,35 @@ header {
 nav {
   width: 60%;
   margin: 0px auto 0px auto;
+  height: 100%;
   padding: 0px;
   border: 0px;
   text-align: center;
+  vertical-align: middle;
+}
+
+.nav-item {
+  width: 19%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 100%;
+}
+
+.nav-item:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.nav-item p {
+  font-size: 1.5vw;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  color: #FFF;
+  text-shadow: 2px 2px 4px #000000;
+  line-height: 0vw;
   vertical-align: middle;
 }
 
@@ -227,11 +253,6 @@ nav {
   vertical-align: middle;
 }
 
-.show-off {
-  font-style: italic;
-  font-family: 'Diplomata SC';
-}
-
 .left {
   margin-right: 2%;
   display: inline-block;
@@ -249,19 +270,6 @@ iframe {
   height: 400px;
   margin: 2%;
   box-sizing: border-box;
-}
-
-footer {
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  height: 100px;
-  width: 100%;
-  margin: 20px 0px 0px 0px;
-  background-color: #E8CE93;
-  border-top: 3px solid #9E8D64;
-  text-align: center;
-  vertical-align: 50%;
 }
 
 #errorText {
