@@ -117,7 +117,7 @@ function addToTable(event){
   var average = newStoreForm.elements['average'].value;
   var warning = document.getElementById('errorText');
   var tBody = document.getElementsByTagName('tbody')[0];
-  var checkForStore = findStore(storeLoc);
+//  var checkForStore = findStore(storeLoc);
   storeForm.appendChild(warning);
   if (isNaN(min) || isNaN(max) || isNaN(average)) {
     warning.innerText = 'Please enter only a number for the minimum, maximum, and average';
