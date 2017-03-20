@@ -1,12 +1,5 @@
-html {
-  height: 100%;
+* {
   box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
 }
 
 body {
@@ -35,14 +28,40 @@ header {
 nav {
   width: 60%;
   margin: 0px auto 0px auto;
+  height: 100%;
   padding: 0px;
   border: 0px;
   text-align: center;
   vertical-align: middle;
 }
 
+.nav-item {
+  width: 19%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 100%;
+}
+
+.nav-item:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.nav-item p {
+  font-size: 1.5vw;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  color: #FFF;
+  text-shadow: 2px 2px 4px #000000;
+  line-height: 0vw;
+  vertical-align: middle;
+}
+
 #spacer {
-  height: 70px;
+  height: 60px;
   width: 100%;
 }
 
@@ -56,7 +75,7 @@ nav {
   position: relative;
 }
 
-#invis {
+.invis {
     vertical-align: top;
     width: 100%;
     opacity: 0;
@@ -93,7 +112,7 @@ nav {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  overflow: auto;
+  overflow: hidden;
 /*  outline: 5px dotted #000; */
 }
 
@@ -106,7 +125,8 @@ nav {
   width: 49%;
   min-height: 480px;
   float: left;
-  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
 .info h4 {
@@ -121,7 +141,143 @@ nav {
 
 .info p {
   margin: 2%;
-  box-sizing: border-box;
+}
+
+#about-img {
+  position: relative;
+  width: 60%;
+  border: 3px solid #9E8D64;
+  border-radius: 10px;
+  margin: 0px 20%;
+  overflow: hidden;
+  padding: 0px;
+  height: 100%;
+  max-height: 250px;
+}
+
+#about-img img {
+  width: 100%;
+  padding: 0px;
+  margin: auto;
+  height: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.slideshow {
+  display: none;
+}
+
+.about-cap {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  font-weight: 800;
+  color: #FFF;
+  font-size: 1.2vw;
+  color: #000;
+  text-shadow: 2px 2px 4px #FFF;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Diplomata SC', cursive;
+}
+
+#family-pic {
+  position: absolute;
+  width: 100%;
+  margin: 0px;
+  overflow: hidden;
+  border-bottom: 3px solid #9E8D64;
+  top: -50px;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+#family-pic img {
+  width: 100%;
+}
+
+#over-family {
+  width: 100%;
+  position: absolute;
+  top: 120px;
+  text-align: center;
+}
+
+#over-family p {
+  font-size: 1.5vw;
+  color: #FFF;
+  text-shadow: 2px 2px 4px #000000;
+  margin: 0px;
+  padding: 0px;
+}
+
+#under-family {
+  width: 100%;
+  position: relative;
+  top: 200px;
+}
+
+#merch-img {
+  width: 96%;
+  margin: 10px 2% 10px 2%;
+  border: 3px solid #9E8D64;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  padding: 0px;
+  height: 410px;
+}
+
+#merch-img img {
+  width: 100%;
+  height: 100%;
+  max-height: 410px;
+  object-fit: cover;
+}
+
+#over-merch {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font-size: 1.5vw;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  color: #FFF;
+  text-shadow: 2px 2px 4px #000000;
+  padding: 0px;
+  height: 60px;
+  background-color: rgba(0,0,0,0.5);
+  vertical-align: middle;
+}
+
+.merch-button {
+  width: 40px;
+  position: absolute;
+  top: 200px;
+  font-size: 1.5vw;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  color: #FFF;
+  padding: 0px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.5);
+  vertical-align: middle;
+}
+
+.merch-button:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+#button-left {
+  left: 0px;
+}
+
+#button-right {
+  right: 0px;
 }
 
 .left {
@@ -141,19 +297,6 @@ iframe {
   height: 400px;
   margin: 2%;
   box-sizing: border-box;
-}
-
-footer {
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  height: 100px;
-  width: 100%;
-  margin: 20px 0px 0px 0px;
-  background-color: #E8CE93;
-  border-top: 3px solid #9E8D64;
-  text-align: center;
-  vertical-align: 50%;
 }
 
 #errorText {

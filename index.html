@@ -9,24 +9,36 @@
   <body>
     <header>
       <nav>
-        nav bar placeholder
+        <a href="#"><div class="nav-item"><p>Home</p></div></a>
+        <a href="#fam-and-merch"><div class="nav-item"><p>Nutrition</p></div></a>
+        <a href="https://www.amazon.com"><div class="nav-item"><p>Store</p></div></a>
+        <a href="email: bob@bob.com"><div class="nav-item"><p>Contact</p></div></a>
+        <a href="sales.html"><div class="nav-item"><p>Sales</p></div></a>
       </nav>
     </header>
 
     <section id="spacer"></section>
 
     <section id="logo">
-      <img src="salmon.png" id="invis" />
+      <img src="salmon.png" class="invis" />
       <div id="floatText">
         <h1>Salmon Cookies</h1>
         <p>They don't taste like barf!</p>
       </div>
     </section>
 
-    <section class="content">
+    <section class="content" id="history">
       <div class="info left">
         <h4>About Salmon Cookies</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div id="about-img">
+          <img src="frosted-cookie.jpg" alt="Picture of the Salmon Cookie" class="slideshow" />
+          <img src="chinook.jpg" alt="Picture of a Chinook" class="slideshow" />
+          <img src="fish.jpg" alt="Fish Painting" class="slideshow" />
+          <div class="about-cap">The Original Salmon Cookie</div>
+          <div class="about-cap">A Future Cookie!</div>
+          <div class="about-cap">Our Inspiration</div>
+        </div>
       </div>
       <div class="info">
         <h4>Store Locations</h4>
@@ -34,8 +46,30 @@
       </div>
     </section>
 
-    <footer>
-      Nothing to see here! Placeholder footer
-    </footer>
+    <section class="content" id="fam-and-merch">
+      <div class="info left">
+        <div id="family-pic">
+          <img src="family.jpg" alt="Happy family picture" />
+        </div>
+        <div id="over-family">
+          <h4>Health Facts</h4>
+          <p>Wholesome as fuck!</p>
+        </div>
+        <div id="under-family">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+      <div class="info">
+        <h4>Merchandise</h4>
+        <div id="merch-img">
+          <img src="cutter.jpeg" alt="Cookie Cutter" class="merch-slide" />
+          <img src="shirt.jpg" alt="T-Shirt" class="merch-slide" />
+          <a href="https://www.amazon.com" id="merch-link" target="_blank"><span id="over-merch"><p>Purchase this on Amazon</p></span></a>
+          <span class="merch-button" id="button-left"><p>&#10094;</p></span>
+          <span class="merch-button" id="button-right"><p>&#10095;</p></span>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="publicpage.js"></script>
   </body>
 </html>
