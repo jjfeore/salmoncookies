@@ -153,6 +153,11 @@ nav {
   padding: 0px;
   height: 100%;
   max-height: 250px;
+  transition: border 1s;
+}
+
+#about-img:hover {
+  border: 5px solid #00ff00;
 }
 
 #about-img img {
